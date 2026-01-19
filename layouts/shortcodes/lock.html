@@ -1,0 +1,30 @@
+{{- $password := .Get "key" -}}
+<div class="lock-container" id="lock-{{ .Ordinal }}">
+    <div class="lock-overlay" id="overlay-{{ .Ordinal }}" style="background: #f5f5f5; padding: 20px; border-radius: 8px; text-align: center; margin: 20px 0;">
+        <p style="margin-bottom: 10px;">加密了喵，请输入密码访问喵:3</p>
+        <input type="password" id="pass-{{ .Ordinal }}" placeholder="请输入密码" style="padding: 5px; border: 1px solid #ddd; border-radius: 4px;">
+        <button onclick="unlock('{{ .Ordinal }}', '{{ $password }}')" style="padding: 5px 15px; background: #333; color: #fff; border: none; border-radius: 4px; cursor: pointer;">解锁</button>
+        <p id="error-{{ .Ordinal }}" style="color: red; display: none; margin-top: 5px; font-size: 0.9em;">密码错误！</p>
+    </div>
+
+    <div class="lock-content" id="content-{{ .Ordinal }}" style="display: none;">
+        {{ .Inner | markdownify }}
+    </div>
+</div>
+
+<script>
+    function unlock(id, correctKey) {
+        var input = document.getElementById('pass-' + id);
+        var overlay = document.getElementById('overlay-' + id);
+        var content = document.getElementById('content-' + id);
+        var errorMsg = document.getElementById('error-' + id);
+
+        if (input.value === correctKey) {
+            overlay.style.display = 'none';
+            content.style.display = 'block';
+        } else {
+            errorMsg.style.display = 'block';
+            input.value = ''; // 清空输入框
+        }
+    }
+</script>

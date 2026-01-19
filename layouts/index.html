@@ -1,0 +1,25 @@
+{{ define "main" }}
+    {{ $homeInfo := site.Params.homeInfoParams }}
+    {{ if $homeInfo }}
+    <article class="first-entry home-info">
+        <header class="entry-header">
+            <h1>{{ $homeInfo.Title | markdownify }}</h1>
+        </header>
+        <div class="entry-content">
+            {{ $homeInfo.Content | markdownify }}
+        </div>
+    </article>
+    {{ end }}
+
+    {{ range .Site.Home.Sections }}
+    <article class="post-entry">
+        <header class="entry-header">
+            <h2>{{ .Title }}</h2>
+        </header>
+        <div class="entry-content">
+            <p>{{ .Description }}</p>
+        </div>
+        <a class="entry-link" aria-label="post link to {{ .Title }}" href="{{ .Permalink }}"></a>
+    </article>
+    {{ end }}
+{{ end }}

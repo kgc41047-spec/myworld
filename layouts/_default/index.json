@@ -1,0 +1,22 @@
+{{- $.Scratch.Add "index" slice -}}
+{{- range .Site.RegularPages -}}
+    {{/* --- 循环开始：遍历每一篇文章 --- */}}
+
+    {{- $hasPassword := .Params.password -}}
+    
+    {{/* --- 检查父文件夹是否有密码 --- */}}
+    {{- $sectionHasPassword := false -}}
+    {{- with .CurrentSection -}}
+        {{- if .Params.password -}}
+            {{- $sectionHasPassword = true -}}
+        {{- end -}} {{/* 关闭 if */}}
+    {{- end -}} {{/* 关闭 with */}}
+
+    {{/* --- 最终判断：如果没隐藏 且 没密码 且 父文件夹没密码 --- */}}
+    {{- if and (not .Params.searchHidden) (not $hasPassword) (not $sectionHasPassword) -}}
+        {{- $.Scratch.Add "index" (dict "title" .Title "content" .Plain "permalink" .Permalink "summary" .Summary) -}}
+    {{- end -}} {{/* 关闭 if */}}
+
+{{- end -}} {{/* 关闭 range (循环结束) */}}
+
+{{- $.Scratch.Get "index" | jsonify -}}
