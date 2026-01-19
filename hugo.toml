@@ -1,0 +1,21 @@
+baseURL = 'https://moomew.github.io/myworld/'
+languageCode = 'zh-cn'
+title = '无名之诗' # 这里改成你想显示的名字
+theme = 'PaperMod'
+
+[params]
+  defaultTheme = "auto" # 跟随系统自动切换黑白模式
+  ShowReadingTime = true # 显示阅读时间，很适合长文章
+  
+  [params.homeInfoParams]
+    Title = "你好，这里是墨鱼（:3）"
+    Content = "这里是我的个人作品集与世界观设定库。"
+
+  [[menu.main]]
+    name = "作品"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    name = "关于我"
+    url = "/about/"
+    weight = 2
