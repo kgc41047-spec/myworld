@@ -6,7 +6,6 @@
     <description>Recent content on 无名之诗</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 17 Dec 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/myworld/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>其一-A</title>
@@ -72,6 +71,13 @@
 今天就写到这里吧，剩下没讲的故事还够我写挺久。&lt;/p&gt;</description>
     </item>
     <item>
+      <title>埃塔</title>
+      <link>http://localhost:1313/myworld/posts/chapter-1.md/eitr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/myworld/posts/chapter-1.md/eitr/</guid>
+      <description>EITR</description>
+    </item>
+    <item>
       <title>其二-A</title>
       <link>http://localhost:1313/myworld/essasys/besides-death/2-2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -132,6 +138,13 @@
 陈老师偶尔还是会忏悔，以一种轻飘飘的、不寻求任何承认的方式。&lt;br&gt;
 陈说：TA希望我戒烟戒酒。&lt;br&gt;
 我应了一声：那你戒吧，赶紧的，确实对身体不好。平日再见到陈老师的时候确实没再抽烟，和我在一起的时候依然照抽不误。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>货币</title>
+      <link>http://localhost:1313/myworld/posts/chapter-1.md/currency/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/myworld/posts/chapter-1.md/currency/</guid>
+      <description>CURRENCY</description>
     </item>
     <item>
       <title>其三-A</title>
@@ -307,13 +320,6 @@
 哈哈。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>纪元设定</title>
-      <link>http://localhost:1313/myworld/posts/firstworld/</link>
-      <pubDate>Sat, 17 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/myworld/posts/firstworld/</guid>
-      <description>四个纪元</description>
-    </item>
-    <item>
       <title>乌白马角</title>
       <link>http://localhost:1313/myworld/essasys/experimental-fiction/wubaimajiao/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -411,6 +417,13 @@
 &lt;p&gt;丛林并未消失，我的身前仍有起伏的楼宇和条街道。它就生长在我心里，我寂寞的血肉正是它的养分。&lt;/p&gt;
 &lt;p&gt;后来我升职了，不再那么辛苦，也就很少走夜路。不过走夜路我也不再怕黑。再无边的夜，再寂寞的丛林，也只有一个爱哭的贪吃鬼。&lt;/p&gt;
 &lt;p&gt;有什么可怕的呢。总有鬼陪我享受寂寞。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>纪元</title>
+      <link>http://localhost:1313/myworld/posts/chapter-2.md/firstworld/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/myworld/posts/chapter-2.md/firstworld/</guid>
+      <description>漫长的历史</description>
     </item>
     <item>
       <title>鎏金</title>

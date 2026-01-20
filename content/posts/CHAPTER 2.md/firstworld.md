@@ -1,8 +1,7 @@
 ---
-title: "纪元设定"
-date: 2022-12-17
+title: "纪元"
 draft: false
-description: "四个纪元"
+description: "漫长的历史"
 ---
 
 ### 第一纪——繁茂纪元
