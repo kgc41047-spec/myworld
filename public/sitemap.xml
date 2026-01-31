@@ -2,10 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/myworld/posts/</loc>
-    <lastmod>2022-12-17T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/myworld/posts/chapter-0.md/</loc>
   </url><url>
-    <loc>http://localhost:1313/myworld/posts/chapter-1.md/</loc>
+    <loc>http://localhost:1313/myworld/posts/</loc>
   </url><url>
     <loc>http://localhost:1313/myworld/essasys/besides-death/2-1/</loc>
   </url><url>
@@ -13,14 +12,19 @@
   </url><url>
     <loc>http://localhost:1313/myworld/posts/chapter-1.md/eitr/</loc>
   </url><url>
-    <loc>http://localhost:1313/myworld/posts/chapter-2.md/</loc>
-    <lastmod>2022-12-17T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/myworld/posts/chapter-3.md/xiwu.md/</loc>
+  </url><url>
+    <loc>http://localhost:1313/myworld/posts/chapter-1.md/</loc>
   </url><url>
     <loc>http://localhost:1313/myworld/essasys/besides-death/2-2/</loc>
   </url><url>
     <loc>http://localhost:1313/myworld/essasys/dihui/1-2/</loc>
   </url><url>
+    <loc>http://localhost:1313/myworld/posts/chapter-1.md/currency/</loc>
+  </url><url>
     <loc>http://localhost:1313/myworld/essasys/</loc>
+  </url><url>
+    <loc>http://localhost:1313/myworld/posts/chapter-2.md/</loc>
   </url><url>
     <loc>http://localhost:1313/myworld/essasys/besides-death/2-3/</loc>
   </url><url>
@@ -28,17 +32,13 @@
   </url><url>
     <loc>http://localhost:1313/myworld/ideas/</loc>
   </url><url>
+    <loc>http://localhost:1313/myworld/posts/chapter-3.md/</loc>
+  </url><url>
     <loc>http://localhost:1313/myworld/about/</loc>
   </url><url>
     <loc>http://localhost:1313/myworld/essasys/besides-death/2-4/</loc>
   </url><url>
     <loc>http://localhost:1313/myworld/essasys/dihui/1-4/</loc>
-  </url><url>
-    <loc>http://localhost:1313/myworld/</loc>
-    <lastmod>2022-12-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/myworld/posts/chapter-2.md/firstworld/</loc>
-    <lastmod>2022-12-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/myworld/categories/</loc>
   </url><url>
@@ -54,7 +54,11 @@
   </url><url>
     <loc>http://localhost:1313/myworld/search/</loc>
   </url><url>
+    <loc>http://localhost:1313/myworld/</loc>
+  </url><url>
     <loc>http://localhost:1313/myworld/essasys/besides-death/</loc>
+  </url><url>
+    <loc>http://localhost:1313/myworld/posts/chapter-2.md/firstworld/</loc>
   </url><url>
     <loc>http://localhost:1313/myworld/essasys/experimental-fiction/liujin/</loc>
   </url>
