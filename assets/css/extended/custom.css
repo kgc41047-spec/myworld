@@ -145,3 +145,107 @@ a { text-decoration: none; }
 .fs {
     font-family: "FangSong", "STFangsong", "仿宋", serif;
 }
+
+/* =================================================================
+   8. 档案卡片 (Card Shortcode)
+   ================================================================= */
+.card-details {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.card-summary {
+    padding: 12px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #fff;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-summary::-webkit-details-marker {
+    display: none;
+}
+
+.card-summary::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: #888;
+    transition: transform 0.2s;
+}
+
+.card-details[open] .card-summary {
+    border-bottom: 1px solid #eee;
+    background-color: #fafafa;
+}
+
+.card-details[open] .card-summary::after {
+    transform: rotate(45deg);
+}
+
+.card-content {
+    padding: 16px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* =================================================================
+   9. 词条悬浮提示 (Term Shortcode)
+   ================================================================= */
+.wiki-term {
+    color: #2c3e50;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    cursor: help;
+    transition: color 0.2s;
+}
+
+.wiki-term:hover {
+    color: #007bff;
+    border-bottom-color: #007bff;
+}
+
+.term-tooltip {
+    visibility: hidden;
+    width: 240px;
+    background-color: #fff;
+    color: #333;
+    text-align: left;
+    border-radius: 6px;
+    padding: 12px;
+    position: absolute;
+    z-index: 100;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -120px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: 1px solid #eee;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.term-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+.wiki-term:hover .term-tooltip {
+    visibility: visible;
+    opacity: 1;
+}

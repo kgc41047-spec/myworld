@@ -1,12 +1,13 @@
 baseURL = 'https://moomew.github.io/myworld/'
 languageCode = 'zh-cn'
 title = '无名之诗' # 这里改成你想显示的名字
-theme = 'PaperMod'
+theme = 'PaperM'
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 [params]
   defaultTheme = "auto"
   ShowReadingTime = true
+  ShowBreadCrumbs = false
 
   # --- 1. 关掉 Profile Mode (加个 false 或者直接注释掉) ---
   [params.profileMode]

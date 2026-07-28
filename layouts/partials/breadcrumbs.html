@@ -1,0 +1,68 @@
+<style>
+  .breadcrumbs {
+    font-size: 0.9rem;
+    color: #666; /* 分隔符颜色：深灰 */
+    margin-bottom: 20px;
+    font-family: sans-serif;
+  }
+
+  .breadcrumbs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .breadcrumbs li {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .breadcrumbs a {
+    text-decoration: none;
+    /* ✅ 修改点 1：颜色改为黑色 */
+    color: #1a1a1a; 
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  /* ✅ 修改点 2：悬停时变成灰色，而不是刺眼的蓝 */
+  .breadcrumbs a:hover {
+    color: #888; 
+    text-decoration: underline;
+  }
+
+  .breadcrumbs .divider {
+    margin: 0 8px;
+    color: #ccc; /* 斜杠颜色变淡一点 */
+  }
+
+  .breadcrumbs .active {
+    color: #999; /* 当前页变成灰色，表示不可点 */
+    font-weight: normal;
+  }
+</style>
+
+<nav class="breadcrumbs" aria-label="breadcrumb">
+  <ul>
+    <li>
+      <a href="{{ .Site.Home.Permalink }}">{{ .Site.Title }}</a>
+    </li>
+
+    {{ range .Ancestors.Reverse }}
+      {{ if not .IsHome }}
+        <li>
+          <span class="divider">/</span>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+    {{ end }}
+
+    <li>
+      <span class="divider">/</span>
+      <span class="active">{{ .Title }}</span>
+    </li>
+  </ul>
+</nav>
