@@ -1,4 +1,4 @@
-baseURL = 'https://moomew.github.io/myworld/'
+baseURL = 'https://kgc41047-spec.github.io/myworld/'
 languageCode = 'zh-cn'
 title = '无名之诗' # 这里改成你想显示的名字
 theme = 'PaperM'
