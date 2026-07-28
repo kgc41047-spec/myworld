@@ -1,0 +1,39 @@
+{{- define "main" }}
+<article class="classified-post">
+  <header class="classified-header">
+    <div class="classified-stamp">
+      <span class="classified-stamp-text">■ 机密档案 ■</span>
+      <span class="classified-stamp-sub">CLASSIFIED DOSSIER</span>
+    </div>
+    <h1 class="classified-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="classified-desc">
+      {{ .Description }}
+    </div>
+    {{- end }}
+  </header>
+
+  <div class="classified-content">
+    {{- if .Content }}
+    <div class="post-content">
+      {{- if not (.Param "disableAnchoredHeadings") }}
+      {{- partial "anchored_headings.html" .Content -}}
+      {{- else }}{{ .Content }}{{ end }}
+    </div>
+    {{- end }}
+  </div>
+
+  <footer class="classified-footer">
+    <div class="classified-warning">
+      ⚠ 此页面不存在于任何索引中。你知道它在这里，因为你属于这里。
+    </div>
+    {{- if .Param "return_to" }}
+    <a href="{{ .Param "return_to" | absLangURL }}" class="classified-back">
+      ← {{ .Param "return_label" | default "返回" }}
+    </a>
+    {{- else }}
+    <a href="{{ "/" | absLangURL }}" class="classified-back">← 返回表层</a>
+    {{- end }}
+  </footer>
+</article>
+{{- end }}

@@ -1,0 +1,10 @@
+# Hugo 本地构建产物，每次 hugo 命令自动生成
+# GitHub Pages 由 Actions 自行构建，无需提交 public/
+public/
+
+# Hugo 构建锁
+.hugo_build.lock
+
+# 系统文件
+.DS_Store
+Thumbs.db

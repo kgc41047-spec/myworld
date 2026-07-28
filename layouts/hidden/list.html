@@ -1,0 +1,53 @@
+{{- define "main" }}
+<article class="classified-post classified-archive">
+  <header class="classified-header">
+    <div class="classified-stamp">
+      <span class="classified-stamp-text">■ 机密档案室 ■</span>
+      <span class="classified-stamp-sub">CLASSIFIED ARCHIVE — AUTHORIZED PERSONNEL ONLY</span>
+    </div>
+    <h1 class="classified-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="classified-desc">
+      {{ .Description }}
+    </div>
+    {{- end }}
+  </header>
+
+  {{- if .Content }}
+  <div class="classified-intro">
+    {{ .Content }}
+  </div>
+  {{- end }}
+
+  {{- $pages := .Pages.ByWeight }}
+  {{- if $pages }}
+  <div class="archive-shelf">
+    {{- range $pages }}
+    <a href="{{ .Permalink }}" class="archive-file">
+      <div class="archive-file-tag">
+        {{- with .Description }}{{ . }}{{ else }}BRANCH RECORD{{ end -}}
+      </div>
+      <h2 class="archive-file-title">{{ .Title }}</h2>
+      {{- if .Summary }}
+      <p class="archive-file-excerpt">{{ .Summary | plainify | truncate 120 }}</p>
+      {{- end }}
+      <span class="archive-file-link">▶ 解密阅读</span>
+    </a>
+    {{- end }}
+  </div>
+  {{- end }}
+
+  <footer class="classified-footer">
+    <div class="classified-warning">
+      ⚠ 本档案室不接入任何索引系统。未经授权的访问将被记录。
+    </div>
+    {{- if .Param "return_to" }}
+    <a href="{{ .Param "return_to" | absLangURL }}" class="classified-back">
+      ← {{ .Param "return_label" | default "返回" }}
+    </a>
+    {{- else }}
+    <a href="{{ "/" | absLangURL }}" class="classified-back">← 返回表层</a>
+    {{- end }}
+  </footer>
+</article>
+{{- end }}

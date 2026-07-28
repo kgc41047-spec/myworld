@@ -1,0 +1,38 @@
+{{- if lt hugo.Version "0.146.0" }}
+{{- errorf "=> hugo v0.146.0 or greater is required for hugo-PaperMod to build " }}
+{{- end -}}
+
+<!DOCTYPE html>
+{{- $theme := site.Params.defaultTheme | default "auto" }}
+{{- if eq $theme "dark" }}
+<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}" data-theme="dark">
+{{- else if eq $theme "light" }}
+<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}" data-theme="light">
+{{- else }}
+<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}" data-theme="auto">
+{{- end }}
+
+<head>
+    {{- partial "head.html" . }}
+</head>
+
+{{- $bodyClass := "" }}
+{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) }}
+{{- $bodyClass = "list" }}
+{{- end }}
+{{- if eq .Type "hidden" }}
+{{- $bodyClass = printf "%s hidden-skin" $bodyClass }}
+{{- end }}
+<body{{ with trim $bodyClass " " }} class="{{ . }}"{{ end }} id="top">
+    {{- if ne .Type "hidden" }}
+    {{ partialCached "header.html" . .Page -}}
+    {{- end }}
+    <main class="main">
+        {{- block "main" . }}{{ end }}
+    </main>
+    {{- if ne .Type "hidden" }}
+    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+    {{- end }}
+</body>
+
+</html>

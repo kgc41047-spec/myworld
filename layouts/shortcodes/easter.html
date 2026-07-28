@@ -1,0 +1,8 @@
+{{- $url := .Get 0 -}}
+{{- $text := .Get 1 | default "档案解密中…" -}}
+{{- if $url }}
+<a href="{{ $url | absLangURL }}" class="easter-egg" title="{{ $text }}">
+  <span class="easter-mark">†</span>
+  <span class="easter-tip">{{ $text }}</span>
+</a>
+{{- end }}
