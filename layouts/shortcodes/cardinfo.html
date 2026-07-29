@@ -1,0 +1,7 @@
+<div class="grade-card">
+  <div class="grade-card-head">
+    <span class="grade-card-badge">{{ .Get "grade" }}</span>
+    <span class="grade-card-range">{{ .Get "range" }}</span>
+  </div>
+  <div class="grade-card-body">{{ .Inner | markdownify }}</div>
+</div>

@@ -665,3 +665,321 @@ body.hidden-skin .archive-file:hover .archive-file-link {
     animation: motto-corrupt 6s infinite 0.08s;
     pointer-events: none;
 }
+
+/* =================================================================
+   14. 旁批笔记 (Margin Note Shortcode)
+   =================================================================
+*/
+
+@font-face {
+    font-family: "ScribeHand";
+    src: url("../../%E5%B9%B3%E6%96%B9%E4%B8%8A%E4%B8%8A%E8%B0%A6%E4%BD%93.ttf") format("truetype");
+    font-display: swap;
+}
+
+.margin-note {
+    font-size: 0.85rem;
+    color: #bbb;
+    cursor: help;
+    position: relative;
+    transition: color 0.3s;
+    line-height: 1;
+}
+
+.margin-note:hover {
+    color: #8b6508;
+}
+
+.margin-note:focus {
+    color: #8b6508;
+    outline: none;
+}
+
+.margin-note-bubble {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 140%;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 330px;
+    background: #fff8e7;
+    color: #3a2a1a;
+    font-family: "ScribeHand", "Zhi Mang Xing", "KaiTi", cursive, serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    line-height: 1.3;
+    text-align: left;
+    padding: 16px 20px;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.06);
+    border: none;
+    border-left: 3px solid #d4a853;
+    z-index: 50;
+    transition: opacity 0.25s, visibility 0.25s, transform 0.25s;
+    pointer-events: none;
+}
+
+.margin-note:hover .margin-note-bubble {
+    transform: translateX(-50%) rotate(-1deg);
+}
+
+.margin-note-bubble::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: #fff8e7 transparent transparent transparent;
+}
+
+.margin-note:hover .margin-note-bubble,
+.margin-note:focus .margin-note-bubble {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dark .margin-note-bubble {
+    background: #2a2520;
+    color: #c4b59a;
+    border-left-color: #8b6508;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.dark .margin-note-bubble::after {
+    border-color: #2a2520 transparent transparent transparent;
+}
+
+/* =================================================================
+   15. 涂抹审查效果 (Redact Shortcode)
+   ================================================================= */
+.redacted-block {
+    display: inline;
+    position: relative;
+    user-select: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 6px,
+        rgba(4, 3, 1, 0.9) 6px,
+        rgba(4, 3, 1, 0.9) 32px,
+        transparent 32px,
+        transparent 40px,
+        rgba(5, 4, 2, 0.87) 40px,
+        rgba(5, 4, 2, 0.87) 66px,
+        transparent 66px,
+        transparent 74px,
+        rgba(4, 3, 1, 0.91) 74px,
+        rgba(4, 3, 1, 0.91) 98px,
+        transparent 98px,
+        transparent 106px,
+        rgba(6, 4, 2, 0.86) 106px,
+        rgba(6, 4, 2, 0.86) 130px,
+        transparent 130px,
+        transparent 138px,
+        rgba(4, 3, 1, 0.88) 138px,
+        rgba(4, 3, 1, 0.88) 156px
+    );
+    padding: 2px 8px;
+    margin: 0 -4px;
+    border-radius: 2px;
+}
+
+.redacted-block:hover {
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 6px,
+        rgba(4, 3, 1, 0.27) 6px,
+        rgba(4, 3, 1, 0.27) 32px,
+        transparent 32px,
+        transparent 40px,
+        rgba(5, 4, 2, 0.26) 40px,
+        rgba(5, 4, 2, 0.26) 66px,
+        transparent 66px,
+        transparent 74px,
+        rgba(4, 3, 1, 0.27) 74px,
+        rgba(4, 3, 1, 0.27) 98px,
+        transparent 98px,
+        transparent 106px,
+        rgba(6, 4, 2, 0.25) 106px,
+        rgba(6, 4, 2, 0.25) 130px,
+        transparent 130px,
+        transparent 138px,
+        rgba(4, 3, 1, 0.26) 138px,
+        rgba(4, 3, 1, 0.26) 156px
+    );
+}
+
+.dark .redacted-block {
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 6px,
+        rgba(2, 1, 0, 0.94) 6px,
+        rgba(2, 1, 0, 0.94) 32px,
+        transparent 32px,
+        transparent 40px,
+        rgba(2, 1, 0, 0.92) 40px,
+        rgba(2, 1, 0, 0.92) 66px,
+        transparent 66px,
+        transparent 74px,
+        rgba(2, 1, 0, 0.95) 74px,
+        rgba(2, 1, 0, 0.95) 98px,
+        transparent 98px,
+        transparent 106px,
+        rgba(2, 1, 0, 0.91) 106px,
+        rgba(2, 1, 0, 0.91) 130px,
+        transparent 130px,
+        transparent 138px,
+        rgba(2, 1, 0, 0.93) 138px,
+        rgba(2, 1, 0, 0.93) 156px
+    );
+}
+
+.dark .redacted-block:hover {
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 6px,
+        rgba(2, 1, 0, 0.28) 6px,
+        rgba(2, 1, 0, 0.28) 32px,
+        transparent 32px,
+        transparent 40px,
+        rgba(2, 1, 0, 0.27) 40px,
+        rgba(2, 1, 0, 0.27) 66px,
+        transparent 66px,
+        transparent 74px,
+        rgba(2, 1, 0, 0.29) 74px,
+        rgba(2, 1, 0, 0.29) 98px,
+        transparent 98px,
+        transparent 106px,
+        rgba(2, 1, 0, 0.27) 106px,
+        rgba(2, 1, 0, 0.27) 130px,
+        transparent 130px,
+        transparent 138px,
+        rgba(2, 1, 0, 0.28) 138px,
+        rgba(2, 1, 0, 0.28) 156px
+    );
+}
+
+/* =================================================================
+   16. 红笔手写批注 (Remark Shortcode)
+   ================================================================= */
+.remark-strip {
+    display: block;
+    text-align: center;
+    padding: 6px 0;
+    margin: 10px 0;
+    user-select: none;
+}
+
+.remark-text {
+    display: inline-block;
+    font-family: "ScribeHand", "Zhi Mang Xing", "KaiTi", cursive, serif;
+    font-size: 2.2rem;
+    color: #cc2222;
+    letter-spacing: 2px;
+    text-shadow: 0 0 4px rgba(180, 20, 20, 0.5);
+    transform: rotate(-2deg);
+    line-height: 1.6;
+}
+
+.dark .remark-text {
+    color: #e04444;
+}
+
+/* =================================================================
+
+/* =================================================================
+   17. 索引卡片抽屉 (Grade Card Drawer)
+   ================================================================= */
+.grade-drawer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 28px 0;
+    padding: 0;
+    position: relative;
+}
+
+/* 每张卡片 */
+.grade-card {
+    background: #fdfaf3;
+    border: 1px solid #e0d8c5;
+    border-radius: 3px;
+    padding: 22px 28px;
+    margin: -2px 0 0 0;
+    position: relative;
+    z-index: 1;
+    box-shadow:
+        0 1px 3px rgba(0,0,0,0.06),
+        0 0 0 1px rgba(180,160,120,0.05);
+    transition: transform 0.25s ease, z-index 0s, box-shadow 0.25s ease;
+    user-select: none;
+}
+
+/* 错位堆叠: 每张微转 */
+.grade-card:nth-child(1) { transform: rotate(-1deg) translateX(-4px);    z-index: 6; }
+.grade-card:nth-child(2) { transform: rotate(0.6deg) translateX(3px);   z-index: 5; }
+.grade-card:nth-child(3) { transform: rotate(-0.4deg) translateX(-2px); z-index: 4; }
+.grade-card:nth-child(4) { transform: rotate(0.5deg) translateX(2px);   z-index: 3; }
+.grade-card:nth-child(5) { transform: rotate(-0.6deg) translateX(-3px); z-index: 2; }
+.grade-card:nth-child(6) { transform: rotate(0.3deg) translateX(1px);   z-index: 1; }
+
+/* hover 浮到最上层 */
+.grade-card:hover {
+    transform: rotate(0deg) translateY(-4px) scale(1.01) !important;
+    z-index: 20 !important;
+    box-shadow:
+        0 8px 24px rgba(0,0,0,0.14),
+        0 0 0 1px rgba(180,160,120,0.12);
+}
+
+/* 等级名 + 阈值同行 */
+.grade-card-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.grade-card-badge {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--primary);
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+.grade-card-range {
+    font-family: "Courier New", monospace;
+    font-size: 0.85rem;
+    color: #999;
+    letter-spacing: 1px;
+}
+
+/* 描述 */
+.grade-card-body {
+    font-family: "KaiTi", "STKaiti", "BiauKai", "楷体", serif;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.9;
+}
+
+/* 暗色模式 */
+.dark .grade-card {
+    background: #1e1c18;
+    border-color: #2a2520;
+    box-shadow:
+        0 1px 3px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(60,50,40,0.1);
+}
+
+.dark .grade-card-body {
+    color: #9a8f80;
+}
