@@ -1,0 +1,14 @@
+<div class="terminal-log">
+  <div class="terminal-log-header">
+    <span class="terminal-log-dot"></span>
+    <span class="terminal-log-dot mid"></span>
+    <span class="terminal-log-dot end"></span>
+    <span class="terminal-log-label">{{ .Get 0 }}</span>
+  </div>
+  <div class="terminal-log-screen">
+    <div class="terminal-log-body">
+      {{ .Inner | markdownify }}
+    </div>
+    <div class="terminal-log-scan"></div>
+  </div>
+</div>
